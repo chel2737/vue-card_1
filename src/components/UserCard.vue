@@ -11,9 +11,9 @@
   <body>
     <div class="user-card">
         <img src="..\user-card\img\70.jpg" class="user-photo">
-        <p class="user-nickname">romashka</p>
+        <p class="user-nickname">{{nickname}}</p>
         <p class="user-name">
-            Иванов Иван<br>
+            {{fullname}}<br>
             Иванович
         </p>
         <hr>
@@ -39,7 +39,8 @@
 export default {
   name: 'UserCard',
   props: {
-    msg: String
+    nickname: String,
+    fullname: String
   }
 }
 </script>

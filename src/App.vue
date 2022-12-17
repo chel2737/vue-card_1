@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <UserCard/>
+    <UserCard nickname="Big Bob" fullname="Биг Бен"/>
+    <data v-on:click="getList()">DATA</data>
   </div>
 </template>
 
@@ -11,6 +12,18 @@ export default {
   name: 'App',
   components: {
     UserCard
+  },
+  methods:{
+    getList(){
+      this.axios.get('https://randomuser.me/api/').then((response) => {console.log(response.data)})
+    }
+  },
+  data(){
+    return{
+      emai: '',
+      nickname: '',
+      fullname: ''
+    }
   }
 }
 </script>
